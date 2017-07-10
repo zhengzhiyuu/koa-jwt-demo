@@ -1,14 +1,15 @@
 const db = require('./db')
+const test = db.get('test')
 
 const addUser = async(userName, userPas) => {
-  await db.insert({
+  await test.insert({
     username: userName,
     userpassword: userPas
   }).then(() => console.log('is ok')).catch(err => console.log(err))
 }
 
 const findUser = async userName => {
-  const data = await db.find({
+  const data = await test.find({
     username: userName
   }).then(res => res).catch(err=>console.log(err))
 

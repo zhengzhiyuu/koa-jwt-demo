@@ -1,8 +1,6 @@
-const mongo = require('monk')('localhost/myAppDB')
-mongo.then(() => {
+const db = require('monk')('localhost/myAppDB')
+db.then(() => {
   console.log('mongo is ok')
 })
-
-const db = mongo.get('test')
 
 module.exports = db
